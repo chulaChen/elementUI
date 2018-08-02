@@ -12,9 +12,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
-      component: home
+      component:  () => import('@/components/home')
+    },
+    {
+      path: '/headTop',
+      name: 'headTop',
+      component:  () => import('../components/headTop')
     },
     {
       path: '/menu',
@@ -26,27 +31,41 @@ export default new Router({
       component: () => import('../layouts/menu.vue')
     },
     {
-      path: '/emitTest',
-      name: 'emitTest',
-      meta: {
-        requiresAuth: true,
-        title: '服务商类型设置'
-      },
-      component: () => import('../layouts/emitTest.vue')
+      path: '/login',
+      name: 'login',
+      component: () => import('../layouts/login.vue')
     },
-   /* {
-      path: '/childEmit',
-      name: 'welcome-button',
-      meta: {
-        requiresAuth: true,
-        title: '服务商类型设置'
-      },
-      component: () => import('../layouts/childEmit.vue')
-    },*/
     {
-      path: '/home',
-      name: 'home',
-      component: home
+      path: '/register',
+      name: 'register',
+      component: () => import('../layouts/register.vue')
+    },
+    {
+      path: '/main',
+      name: 'main',
+      component:  () => import('../layouts/main.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'mainRight',
+          component: () => import('../layouts/mainRight.vue')
+        },
+        {
+          path: '/',
+          name: 'mainPage',
+          component: () => import('../components/page02.vue')
+        },
+        {
+          path: '/userList',
+          name: 'userList',
+          component: () => import('../layouts/user/userList.vue')
+        },
+        {
+          path: '/emitTest',
+          name: 'emitTest',
+          component: () => import('../layouts/emitTest.vue')
+        }
+      ]
     },
     {
       path: '/page01',
