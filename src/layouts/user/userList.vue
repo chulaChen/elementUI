@@ -52,7 +52,6 @@
         },
         created(){
           console.info("hahahhhhh");
-
         }
 
     }

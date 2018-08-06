@@ -51,7 +51,7 @@ export default new Router({
           component: () => import('../layouts/mainRight.vue')
         },
         {
-          path: '/',
+          path: '/mainPage',
           name: 'mainPage',
           component: () => import('../components/page02.vue')
         },

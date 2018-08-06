@@ -43,4 +43,7 @@
     background-color: #138bec;
     border: 1px solid #138bec;
   }
+  body{
+    margin: 0px;
+  }
 </style>
