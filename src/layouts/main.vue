@@ -13,7 +13,7 @@
                     </el-submenu>
                     <el-submenu index="2">
                       <template slot="title"><i class="el-icon-plus"></i>添加数据</template>
-                      <el-menu-item index="/page01">添加商铺</el-menu-item>
+                      <el-menu-item index="/emitTest">添加商铺</el-menu-item>
                       <!--<el-menu-item index="addGoods">添加商品</el-menu-item>-->
                     </el-submenu>
                 </el-menu>
