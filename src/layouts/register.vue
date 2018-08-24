@@ -58,8 +58,6 @@ export default {
   },
   methods:{
     submit:function () {
-      console.log("hhhahhaha");
-      // this.$store.dispatch('menu')
       this.$router.push('login')
     }
 

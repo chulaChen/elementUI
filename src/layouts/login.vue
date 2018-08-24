@@ -58,9 +58,34 @@
     },
     methods:{
       submit:function () {
-        console.log("hhhahhaha");
         // this.$store.dispatch('menu')
-        this.$router.push('main')
+        // this.$router.push('main')
+        var obj = this;
+        this.$http({
+          method: 'GET',
+          url: '/user/login',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          credentials: 'include',
+          mode: "cors",
+          cache: "force-cache",
+          data: {
+            name: 'virus'
+          }
+        }).then(function(response){
+            var data = response.data;
+            if(data.status>0){
+              obj.$router.push('main')
+            }else{
+              alert(data.info);
+            }
+        },function(res){
+          alert(res.status)
+        });
+
+
       }
 
     },

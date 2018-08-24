@@ -2,7 +2,11 @@ import Vue from 'vue'
 import Element from 'element-ui';
 import App from './App'
 import router from './router/index'
-import 'element-ui/lib/theme-chalk/index.css'
+import 'element-ui/lib/theme-chalk/index.css';
+import axios from 'axios';
+Vue.prototype.$http= axios;
+axios.defaults.baseURL = 'http://localhost:8080/start';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 Vue.use(Element, { size: 'small', zIndex: 3000 });
 
 Vue.config.productionTip = false
